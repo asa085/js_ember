@@ -1,0 +1,10 @@
+<article class="detail">
+  <h2>{{@model.name}}</h2>
+  <p class="price">¥{{@model.price}}</p>
+  <p>{{@model.description}}</p>
+
+  {{! 状態を持つコンポーネントの例 }}
+  <LikeButton />
+
+  <p><LinkTo @route="products.index">← 一覧へ戻る</LinkTo></p>
+</article>
