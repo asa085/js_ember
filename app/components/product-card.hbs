@@ -1,0 +1,17 @@
+{{! @product → 親から渡された引数 / this.〇〇 → 自分自身の状態。この区別が最重要 }}
+<div class="card" data-test-product-card={{@product.id}}>
+  <h3>
+    <LinkTo @route="products.detail" @model={{@product.id}}>
+      {{@product.name}}
+    </LinkTo>
+  </h3>
+  <p class="price">¥{{@product.price}}</p>
+
+  <button type="button" {{on "click" this.toggle}}>
+    {{if this.isExpanded "閉じる" "詳細を見る"}}
+  </button>
+
+  {{#if this.isExpanded}}
+    <p>{{@product.description}}</p>
+  {{/if}}
+</div>

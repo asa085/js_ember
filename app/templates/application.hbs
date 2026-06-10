@@ -1,0 +1,17 @@
+{{page-title "Ember Study App"}}
+
+{{! ★ application.hbs = 全画面共通の親テンプレート(常に表示される) }}
+<header class="site-header">
+  <strong>Ember Study App</strong>
+  <nav>
+    {{! LinkTo = ページ遷移リンク。route 名で指定する(URL 直書きしない) }}
+    <LinkTo @route="index">ホーム</LinkTo>
+    <LinkTo @route="products">商品一覧</LinkTo>
+    <LinkTo @route="about">このアプリについて</LinkTo>
+  </nav>
+</header>
+
+<main class="site-main">
+  {{! ★ outlet = 子ルートのテンプレートがはめ込まれる場所 }}
+  {{outlet}}
+</main>

@@ -1,0 +1,7 @@
+{{! @model には routes/products/index.js の model() の戻り値が入っている }}
+<p>{{@model.length}} 件の商品があります。</p>
+
+{{! #each = for ループ。Python: for product in model: }}
+{{#each @model as |product|}}
+  <ProductCard @product={{product}} />
+{{/each}}
